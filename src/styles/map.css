@@ -1,0 +1,17 @@
+.contact-map {
+    width: 100vw;  /* Chiếm toàn bộ chiều rộng màn hình */
+    height: 50vh;  /* Chiều cao chiếm 50% màn hình */
+    margin-top: -50px;  /* Đẩy lên phía trên */
+    padding: 0;  /* Loại bỏ padding */
+    position: relative;
+  }
+  
+  .contact-map iframe {
+    width: 100%;  /* Chiếm toàn bộ chiều rộng */
+    height: 100%;  /* Chiếm toàn bộ chiều cao */
+    border: 0;  /* Loại bỏ viền */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  

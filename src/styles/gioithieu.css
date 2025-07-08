@@ -1,0 +1,59 @@
+.gioithieu {
+    padding: 2rem 2rem;
+    margin-top: -2.2rem; 
+    background-color: #fefefe;
+    text-align: center;
+  }
+  
+  .gioi-thieu-title {
+    color: rgb(4, 77, 81);
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .gioi-thieu-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap; /* Cho mobile */
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1 1 45%;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; 
+  }
+  
+  .left-column h2, .right-column h2 {
+    color: #333;
+    font-size: 2rem;
+  }
+  
+  .left-column p {
+    color: red; 
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  .right-column p {
+    font-size: 1.2rem;
+  }
+  .left-column .icon {
+    display: block;
+    margin: 0 auto 0.5rem auto; /* Căn giữa và cách dưới */
+    width: 40px;
+    height: auto;
+  }
+  .icon {
+    display: block;
+    margin: 0 auto 0.5rem auto;
+    width: 50px;
+    height: auto;
+  }
+  html {
+  scroll-behavior: smooth;
+}

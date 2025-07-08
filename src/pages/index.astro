@@ -1,16 +1,55 @@
 ---
+// src/pages/index.astro
+import Header from '../components/Header.astro';
+import LienHe from '../components/LienHe.astro';
+import GioiThieu from '../components/GioiThieu.astro';
+import ChucNang from '../components/ChucNang.astro';
+import NhanSu from '../components/NhanSu.astro';
+import SanPhamDauTu from '../components/SanPhamDauTu.astro';
+import SanPhamHopTac from '../components/SanPhamHopTac.astro';
+import SuKien from '../components/SuKien.astro';
+import KetNoiKinhDoanh from '../components/KetNoiKinhDoanh.astro';
+import Websites from '../components/Websites.astro';
+import HoatDongTrongNuoc from '../components/HoatDongTrongNuoc.astro';
+import HoatDongQuocTe from '../components/HoatDongQuocTe.astro';
+import Map from '../components/Map.astro';
+import '../styles/header.css';
+import '../styles/gioithieu.css';
+import '../styles/chucnang.css';
+import '../styles/sanphamdautu.css';
+import '../styles/sanphamhoptac.css';
+import '../styles/sukien.css';
+import '../styles/ketnoi.css';
+import '../pages/index.js'
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ | TMAi Saigon</title>
+    <style>
+      body { font-family: sans-serif; margin: 0; padding: 0; }
+      section { padding: 2rem; border-bottom: 1px solid #ccc; }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <GioiThieu />
+      <ChucNang />
+      <NhanSu />
+      <SanPhamDauTu />
+      <SanPhamHopTac />
+      <SuKien />
+      <KetNoiKinhDoanh />
+      <Websites />
+      <HoatDongTrongNuoc />
+      <HoatDongQuocTe />
+      <Map />
+      <LienHe />
+    </main>
+  </body>
 </html>

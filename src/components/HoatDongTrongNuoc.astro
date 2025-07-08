@@ -1,0 +1,157 @@
+---
+import "../styles/hoatdongtrongnuoc.css";
+---
+
+<section id="hoat-dong-trong-nuoc" class="hoat-dong-trong-nuoc">
+  <h2 class="hoatdongtrongnuoc-title">Hoạt Động Trong Nước</h2>
+
+  <div class="gallery-container">
+    <button class="nav-btn left" id="prevBtn" aria-label="Previous Image">&#10094;</button>
+
+    <div class="main-image-frame">
+      <img
+        id="mainImage"
+        src="/img/internal/fordmienTay.jpg"
+        alt="Ảnh hoạt động"
+        class="main-image"
+      />
+    </div>
+
+    <button class="nav-btn right" id="nextBtn" aria-label="Next Image">&#10095;</button>
+  </div>
+
+  <!-- Thanh thumbnails với 2 nút điều khiển -->
+  <div class="thumbnails-wrapper">
+    <button class="thumb-nav-btn" id="thumbPrevBtn" aria-label="Scroll Thumbnails Left">&#10094;</button>
+    <div class="thumbnails" id="thumbnails" role="list"></div>
+    <button class="thumb-nav-btn" id="thumbNextBtn" aria-label="Scroll Thumbnails Right">&#10095;</button>
+  </div>
+
+  <script type="module">
+    const imageData = [
+      { src: "/img/internal/20170106_112944ok.jpg" },
+      { src: "/img/internal/20180414_101057ok-min.jpg" },
+      { src: "/img/internal/20180414_110047 ok-min.jpg" },
+      { src: "/img/internal/20180420_191003 ok-min.jpg" },
+      { src: "/img/internal/20180503_155648ok.jpg" },
+      { src: "/img/internal/20180518_090644OK-min.jpg" },
+      { src: "/img/internal/ban nhac-min.jpg" },
+      { src: "/img/internal/cactinh1.jpg" },
+      { src: "/img/internal/caolanh5-min.jpg" },
+      { src: "/img/internal/coalanh3-min.jpg" },
+      { src: "/img/internal/fordmienTay.jpg" },
+      { src: "/img/internal/heineken.jpg" },
+      { src: "/img/internal/hoatdongtrognuoc.jpg" },
+      { src: "/img/internal/hoatdongtrognnuoc-minhlong.jpg" },
+      { src: "/img/internal/Logan_Anjaneyulu_Alamo_Equity_5@2x.jpg" },
+      { src: "/img/internal/mo-rong-dau-tu-Ford.jpg" },
+      { src: "/img/internal/ngaymoisaigon_sheraton_intercontinental_ket_noi_kinh_doanh_2.jpg" },
+      { src: "/img/internal/P1010188 ok.jpg" },
+      { src: "/img/internal/RuudGullit.jpg" },
+      { src: "/img/internal/tinh3.jpg" },
+      { src: "/img/internal/tinh4.jpg" },
+      { src: "/img/internal/tinh5.jpg" },
+      { src: "/img/internal/tinh6.jpg" },
+      { src: "/img/internal/tinh7.jpg" },
+      { src: "/img/internal/tinh8.jpg" },
+      { src: "/img/internal/trongnuoc1.jpg" },
+      { src: "/img/internal/trongnuoc2.jpg" },
+      { src: "/img/internal/trongnuoc3.jpg" },
+      { src: "/img/internal/trongnuoc4.jpg" },
+      { src: "/img/internal/maybay-min.jpg" },
+    ];
+
+    let currentIndex = 0;
+
+    const mainImage = document.getElementById("mainImage");
+    const thumbnailsContainer = document.getElementById("thumbnails");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const thumbPrevBtn = document.getElementById("thumbPrevBtn");
+    const thumbNextBtn = document.getElementById("thumbNextBtn");
+
+    function updateImage(index) {
+      currentIndex = (index + imageData.length) % imageData.length;
+      mainImage.src = imageData[currentIndex].src;
+
+      const allThumbs = document.querySelectorAll(".thumbnail");
+      allThumbs.forEach((thumb, idx) => {
+        thumb.classList.toggle("active", idx === currentIndex);
+      });
+
+      // Scroll active thumbnail vào giữa
+      const activeThumb = allThumbs[currentIndex];
+      if (activeThumb) {
+        const containerRect = thumbnailsContainer.getBoundingClientRect();
+        const thumbRect = activeThumb.getBoundingClientRect();
+
+        const offset =
+          thumbRect.left +
+          thumbRect.width / 2 -
+          (containerRect.left + containerRect.width / 2);
+
+        thumbnailsContainer.scrollBy({ left: offset, behavior: "smooth" });
+      }
+    }
+
+    function renderThumbnails() {
+      thumbnailsContainer.innerHTML = "";
+      imageData.forEach((item, index) => {
+        const thumb = document.createElement("img");
+        thumb.src = item.src;
+        thumb.className = "thumbnail" + (index === currentIndex ? " active" : "");
+        thumb.alt = `Thumbnail ảnh hoạt động số ${index + 1}`;
+        thumb.role = "listitem";
+        thumb.tabIndex = 0;
+        thumb.onclick = () => updateImage(index);
+        thumb.onkeydown = (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            updateImage(index);
+          }
+        };
+        thumbnailsContainer.appendChild(thumb);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => updateImage(currentIndex - 1));
+    nextBtn.addEventListener("click", () => updateImage(currentIndex + 1));
+
+    const thumbnailWidth = 108; // 100px + 8px gap
+
+    thumbPrevBtn.addEventListener("click", () => {
+      if (thumbnailsContainer.scrollLeft <= 0) {
+        thumbnailsContainer.scrollTo({
+          left: thumbnailsContainer.scrollWidth,
+          behavior: "smooth",
+        });
+      } else {
+        thumbnailsContainer.scrollBy({
+          left: -thumbnailWidth,
+          behavior: "smooth",
+        });
+      }
+    });
+
+    thumbNextBtn.addEventListener("click", () => {
+      if (
+        thumbnailsContainer.scrollLeft + thumbnailsContainer.clientWidth >=
+        thumbnailsContainer.scrollWidth - 5
+      ) {
+        thumbnailsContainer.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        thumbnailsContainer.scrollBy({
+          left: thumbnailWidth,
+          behavior: "smooth",
+        });
+      }
+    });
+
+    // Initialize gallery
+    renderThumbnails();
+    updateImage(currentIndex);
+  </script>
+</section>

@@ -1,0 +1,187 @@
+---
+import "../styles/hoatdongquocte.css";
+
+const imageDataQT = [
+  { src: '/img/international/bangkok 1.jpg' },
+  { src: '/img/international/bangkok 2.jpg' },
+  { src: '/img/international/bejaya2.jpg' },
+  { src: '/img/international/berjaya1.jpg' },
+  { src: '/img/international/berjaya3.jpg' },
+  { src: '/img/international/campuchia.jpg' },
+  { src: '/img/international/catahypacific.jpg' },
+  { src: '/img/international/cung_dai_dien_cac_nuoc_chau_A.jpg' },
+  { src: '/img/international/DSC_5846okCopy.jpg' },
+  { src: '/img/international/hongkong.jpg' },
+  { src: '/img/international/hongleonbank.jpg' },
+  { src: '/img/international/IMG_1559ok.jpg' },
+  { src: '/img/international/img127.jpg' },
+  { src: '/img/international/khaosatCopy.jpg' },
+  { src: '/img/international/khinh_khi_cau_Dai_Loan.jpg' },
+  { src: '/img/international/luotvan_dai_Loan.jpg' },
+  { src: '/img/international/malaysia ok.jpg' },
+  { src: '/img/international/P1000224.jpg' },
+  { src: '/img/international/pataya.jpg' },
+  { src: '/img/international/phuket.jpg' },
+  { src: '/img/international/singapore.jpg' },
+  { src: '/img/international/Tai_tang_100_Sky_Hong_Kong.jpg' },
+  { src: '/img/international/thai 1.jpg' },
+  { src: '/img/international/thai 2.jpg' },
+  { src: '/img/international/thai 3.jpg' },
+  { src: '/img/international/THAILANCopy.jpg' },
+  { src: '/img/international/thuvien.jpg' },
+  { src: '/img/international/trungquoc.jpg' },
+  { src: '/img/international/truongtieuhoc2Copy.jpg' },
+];
+---
+
+<section class="hoat-dong-quoc-te">
+  <h2 class="hoatdongquocte-title">Hoạt Động Quốc Tế</h2>
+
+  <div class="gallery-container">
+    <button class="nav-btn left" id="prevBtnQT" aria-label="Previous Image">&#10094;</button>
+
+    <div class="main-image-frame">
+      <img
+        id="mainImageQT"
+        src={imageDataQT[0].src}
+        alt="Ảnh hoạt động quốc tế"
+        class="main-image"
+      />
+    </div>
+
+    <button class="nav-btn right" id="nextBtnQT" aria-label="Next Image">&#10095;</button>
+  </div>
+
+  <div class="thumbnails-wrapper">
+    <button class="thumb-nav-btn" id="thumbPrevBtnQT" aria-label="Scroll Thumbnails Left">&#10094;</button>
+    <div class="thumbnails" id="thumbnailsQT" role="list"></div>
+    <button class="thumb-nav-btn" id="thumbNextBtnQT" aria-label="Scroll Thumbnails Right">&#10095;</button>
+  </div>
+</section>
+
+<script client:load>
+  const imageDataQT = [
+    { src: '/img/international/bangkok 1.jpg' },
+    { src: '/img/international/bangkok 2.jpg' },
+    { src: '/img/international/bejaya2.jpg' },
+    { src: '/img/international/berjaya1.jpg' },
+    { src: '/img/international/berjaya3.jpg' },
+    { src: '/img/international/campuchia.jpg' },
+    { src: '/img/international/catahypacific.jpg' },
+    { src: '/img/international/cung_dai_dien_cac_nuoc_chau_A.jpg' },
+    { src: '/img/international/DSC_5846okCopy.jpg' },
+    { src: '/img/international/hongkong.jpg' },
+    { src: '/img/international/hongleonbank.jpg' },
+    { src: '/img/international/IMG_1559ok.jpg' },
+    { src: '/img/international/img127.jpg' },
+    { src: '/img/international/khaosatCopy.jpg' },
+    { src: '/img/international/khinh_khi_cau_Dai_Loan.jpg' },
+    { src: '/img/international/luotvan_dai_Loan.jpg' },
+    { src: '/img/international/malaysia ok.jpg' },
+    { src: '/img/international/P1000224.jpg' },
+    { src: '/img/international/pataya.jpg' },
+    { src: '/img/international/phuket.jpg' },
+    { src: '/img/international/singapore.jpg' },
+    { src: '/img/international/Tai_tang_100_Sky_Hong_Kong.jpg' },
+    { src: '/img/international/thai 1.jpg' },
+    { src: '/img/international/thai 2.jpg' },
+    { src: '/img/international/thai 3.jpg' },
+    { src: '/img/international/THAILANCopy.jpg' },
+    { src: '/img/international/thuvien.jpg' },
+    { src: '/img/international/trungquoc.jpg' },
+    { src: '/img/international/truongtieuhoc2Copy.jpg' },
+  ];
+
+  let currentIndexQT = 0;
+
+  const mainImageQT = document.getElementById('mainImageQT');
+  const thumbnailsContainerQT = document.getElementById('thumbnailsQT');
+  const prevBtnQT = document.getElementById('prevBtnQT');
+  const nextBtnQT = document.getElementById('nextBtnQT');
+  const thumbPrevBtnQT = document.getElementById('thumbPrevBtnQT');
+  const thumbNextBtnQT = document.getElementById('thumbNextBtnQT');
+
+  function updateImageQT(index) {
+    currentIndexQT = (index + imageDataQT.length) % imageDataQT.length;
+    mainImageQT.src = imageDataQT[currentIndexQT].src;
+
+    const allThumbs = document.querySelectorAll('#thumbnailsQT .thumbnail');
+    allThumbs.forEach((thumb, idx) => {
+      thumb.classList.toggle('active', idx === currentIndexQT);
+    });
+
+    // Scroll active thumbnail vào giữa
+    const activeThumb = allThumbs[currentIndexQT];
+    if (activeThumb) {
+      const containerRect = thumbnailsContainerQT.getBoundingClientRect();
+      const thumbRect = activeThumb.getBoundingClientRect();
+
+      const offset =
+        thumbRect.left +
+        thumbRect.width / 2 -
+        (containerRect.left + containerRect.width / 2);
+
+      thumbnailsContainerQT.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+  }
+
+  function renderThumbnailsQT() {
+    thumbnailsContainerQT.innerHTML = '';
+    imageDataQT.forEach((item, index) => {
+      const thumb = document.createElement('img');
+      thumb.src = item.src;
+      thumb.className = 'thumbnail' + (index === currentIndexQT ? ' active' : '');
+      thumb.alt = `Thumbnail ảnh hoạt động quốc tế số ${index + 1}`;
+      thumb.role = 'listitem';
+      thumb.tabIndex = 0;
+      thumb.onclick = () => updateImageQT(index);
+      thumb.onkeydown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          updateImageQT(index);
+        }
+      };
+      thumbnailsContainerQT.appendChild(thumb);
+    });
+  }
+
+  prevBtnQT.addEventListener('click', () => updateImageQT(currentIndexQT - 1));
+  nextBtnQT.addEventListener('click', () => updateImageQT(currentIndexQT + 1));
+
+  const thumbnailWidthQT = 108; // 100px + 8px gap
+
+  thumbPrevBtnQT.addEventListener('click', () => {
+    if (thumbnailsContainerQT.scrollLeft <= 0) {
+      thumbnailsContainerQT.scrollTo({
+        left: thumbnailsContainerQT.scrollWidth,
+        behavior: 'smooth',
+      });
+    } else {
+      thumbnailsContainerQT.scrollBy({
+        left: -thumbnailWidthQT,
+        behavior: 'smooth',
+      });
+    }
+  });
+
+  thumbNextBtnQT.addEventListener('click', () => {
+    if (
+      thumbnailsContainerQT.scrollLeft + thumbnailsContainerQT.clientWidth >=
+      thumbnailsContainerQT.scrollWidth - 5
+    ) {
+      thumbnailsContainerQT.scrollTo({
+        left: 0,
+        behavior: 'smooth',
+      });
+    } else {
+      thumbnailsContainerQT.scrollBy({
+        left: thumbnailWidthQT,
+        behavior: 'smooth',
+      });
+    }
+  });
+
+  // Initialize gallery
+  renderThumbnailsQT();
+  updateImageQT(currentIndexQT);
+</script>

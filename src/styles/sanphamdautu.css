@@ -1,0 +1,57 @@
+.san-pham-dau-tu {
+    padding: 2rem;
+    background-color: #fefefe;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.san-pham-title {
+    color: rgb(4, 77, 81);
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    margin-top: -10px;
+    position: relative;
+    z-index: 1;
+}
+
+.images-sanphamdautu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 ảnh mỗi hàng */
+    gap: 0.5rem;
+    padding: 2rem 0;
+    justify-items: center;
+    background-color: #fff;
+    margin-top: -1.5rem;
+}
+
+.image-sanphamdautu {
+    width: 100%;
+    max-width: 330px; /* kích thước thực tế của bìa tạp chí */
+    height: auto;      /* tự động theo tỷ lệ gốc */
+}
+
+.image-sanphamdautu img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* giúp giữ nguyên tỉ lệ ảnh */
+    display: block;
+    border-radius: 5px;
+}
+
+
+/* Thanh ngang dưới */
+.san-pham-dau-tu::after {
+    content: "";
+    position: absolute;
+    left: 50%; /* Đặt thanh ngang vào giữa */
+    transform: translateX(-50%); /* Căn giữa thanh ngang */
+    width: 100%; /* Thanh ngang dài 90% chiều rộng trang */
+    height: 0.5px; /* Chiều cao thanh ngang */    
+    background-color: #ccc; /* Màu của thanh ngang */
+    z-index: 0;
+}
+.chuc-nang::after {
+    bottom: 0; /* Thanh ngang dưới */
+    top: auto;
+}

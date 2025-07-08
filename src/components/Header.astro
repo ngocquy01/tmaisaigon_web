@@ -1,0 +1,92 @@
+---
+// Phần server-side script nếu cần (ví dụ import logo URL, etc)
+const logoUrl = "/img/logo_tmaisaigon.jpg";
+const heroImages = [
+  "/img/general/trangchu.jpg",
+  "/img/general/344X3085@2x.jpg",
+  "/img/general/344X3090@2x.jpg",
+  "/img/general/344X3127@2x.jpg",
+  "/img/general/hinh_trang_chu_2.jpg",
+  "/img/general/IMG_0894@2x.jpg",
+  "/img/general/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_1@2x.jpg",
+  "/img/general/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_8@2x.jpg",
+  "/img/general/ngaymoisaigon_TMAI_SAIGON_ky_niem_3_nam.jpg",
+  "/img/general/12.jpg"
+];
+---
+<header>
+  <div class="logo">
+    <img src={logoUrl} alt="TMAi Saigon Logo" width="150" />
+  </div>
+
+  <div class="hero-image">
+    <img src={heroImages[0]} alt="Hero Image" id="hero-image" />
+  </div>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+    &#9776;
+  </button>
+
+  <nav class="menu" id="menu" role="menu" aria-hidden="true">
+    <a href="javascript:void(0);" class="close-text" role="menuitem" tabindex="-1">Close ✕</a>
+    <a href="#gioithieu" role="menuitem" tabindex="-1">Giới thiệu</a>
+    <a href="#chuc-nang" role="menuitem" tabindex="-1">Chức năng</a>
+    <a href="#nhan-su" role="menuitem" tabindex="-1">Nhân sự</a>
+    <a href="#san-pham-dau-tu" role="menuitem" tabindex="-1">Sản phẩm đầu tư</a>
+    <a href="#san-pham-hop-tac" role="menuitem" tabindex="-1">Sản phẩm hợp tác - Dự Án sách</a>
+    <a href="#ket-noi-kinh-doanh" role="menuitem" tabindex="-1">Kết nối kinh doanh</a>
+    <a href="#san-pham-websites" role="menuitem" tabindex="-1">Sản phẩm websites</a>
+    <a href="#hoat-dong-trong-nuoc" role="menuitem" tabindex="-1">Hoạt động</a>
+    <a href="#lien-he" role="menuitem" tabindex="-1">Liên hệ</a>
+  </nav>
+</header>
+
+<script client:load>
+  const heroImages = [
+    "/img/general/trangchu.jpg",
+    "/img/general/344X3085@2x.jpg",
+    "/img/general/344X3090@2x.jpg",
+    "/img/general/344X3127@2x.jpg",
+    "/img/general/hinh_trang_chu_2.jpg",
+    "/img/general/IMG_0894@2x.jpg",
+    "/img/general/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_1@2x.jpg",
+    "/img/general/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_8@2x.jpg",
+    "/img/general/ngaymoisaigon_TMAI_SAIGON_ky_niem_3_nam.jpg",
+    "/img/general/12.jpg"
+  ];
+
+  let currentImageIndex = 0;
+
+  setInterval(() => {
+    currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+    const img = document.getElementById('hero-image');
+    if (img) {
+      img.src = heroImages[currentImageIndex];
+    }
+  }, 4000);
+
+  const menuBtn = document.getElementById('menuBtn');
+  const menu = document.getElementById('menu');
+  const closeBtn = document.querySelector('.close-text');
+
+  function closeMenu() {
+    menu.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', false);
+    menu.setAttribute('aria-hidden', true);
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => link.tabIndex = -1);
+  }
+
+  menuBtn.addEventListener('click', () => {
+    const isActive = menu.classList.toggle('active');
+    menuBtn.setAttribute('aria-expanded', isActive);
+    menu.setAttribute('aria-hidden', !isActive);
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.tabIndex = isActive ? 0 : -1;
+    });
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+
+</script>
