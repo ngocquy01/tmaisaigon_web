@@ -3,6 +3,7 @@
   margin-top: -2.2rem;
   background-color: #fefefe;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .gioi-thieu-title {
@@ -16,6 +17,7 @@
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .left-column,
@@ -29,6 +31,7 @@
   text-align: center;
   transition: transform 0.3s ease;
   min-width: 280px;
+  box-sizing: border-box;
 }
 
 .left-column:hover,
@@ -125,6 +128,18 @@ html {
     padding: 1.5rem 1rem;
   }
 
+  .gioi-thieu-columns {
+    gap: 1.2rem;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    min-width: unset; /* Fix lỗi tràn trên mobile */
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
   .gioi-thieu-title {
     font-size: 1.9rem;
   }
@@ -145,11 +160,4 @@ html {
   .icon {
     width: 32px;
   }
-
-  .left-column,
-  .right-column {
-    padding: 1.2rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  }
 }
-
