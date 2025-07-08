@@ -94,6 +94,11 @@
   bottom: 30px;
 }
 
+.chuc-nang::after {
+  bottom: 0;
+  top: auto;
+}
+
 /* ================= Responsive ================= */
 
 /* Laptop & Tablet */
@@ -137,7 +142,7 @@
   }
 
   .san-pham-hop-tac::after {
-    bottom: -20px; 
+    bottom: -30px; 
   }
 }
 
