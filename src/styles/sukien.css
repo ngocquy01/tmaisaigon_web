@@ -10,7 +10,7 @@
   color: rgb(4, 77, 81);
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
-  margin-top: -10px; 
+  margin-top: -10px;
   position: relative;
   z-index: 1;
 }
@@ -58,7 +58,6 @@
   text-decoration: none;
   color: inherit;
 }
-
 
 .gioi-thieu::after {
   content: "";
@@ -113,6 +112,8 @@
   }
 
   .gioi-thieu::after {
-    bottom: 20px;
+    bottom: 15px; 
+    height: 1px;
+    background-color: #ccc;
   }
 }
