@@ -4,13 +4,14 @@
   text-align: center;
   position: relative;
   margin-bottom: 1rem;
+  margin-top: -35px; 
 }
 
 .hoatdongtrongnuoc-title {
   color: #004d4d;
   font-size: 3rem;
   margin-bottom: 2rem;
-  margin-top: -5rem;
+  margin-top: 0; 
 }
 
 .gallery-container {
@@ -43,7 +44,7 @@
   object-fit: contain;
 }
 
-/* Nút điều hướng ảnh lớn */
+
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -72,7 +73,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Wrapper chứa thanh thumbnails */
+
 .thumbnails-wrapper {
   width: 100%;
   display: flex;
@@ -87,7 +88,7 @@
   overflow: hidden;
 }
 
-/* Nút điều hướng thumbnails trái/phải */
+
 .thumb-nav-btn {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
@@ -105,7 +106,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Dải thumbnails (carousel ngang) */
+
 .thumbnails {
   display: flex;
   overflow-x: auto;
@@ -119,6 +120,7 @@
   -ms-overflow-style: none; /* IE 10+ */
   white-space: nowrap;
 }
+
 .thumbnails::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
