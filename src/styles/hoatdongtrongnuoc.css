@@ -1,28 +1,19 @@
-.hoatdongtrongnuoc-title {
-  color: #004d4d;
-  font-size: 3rem;
-  margin-bottom: 1rem; 
-  margin-top: 0;
-}
-
-.hoat-dong-trong-nuoc::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background-color: #004d4d;
-  margin: 0.5rem auto 0; 
-  border-radius: 2px;
+.hoat-dong-trong-nuoc {
+  background-color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: -35px; 
 }
 
 .hoatdongtrongnuoc-title {
   color: #004d4d;
   font-size: 3rem;
   margin-bottom: 2rem;
-  margin-top: 0;
+  margin-top: 0; 
 }
 
-/* Gallery */
 .gallery-container {
   position: relative;
   background-color: #2d2d2d;
@@ -53,7 +44,7 @@
   object-fit: contain;
 }
 
-/* Navigation buttons */
+
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -82,7 +73,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Thumbnail wrapper */
+
 .thumbnails-wrapper {
   width: 100%;
   display: flex;
@@ -96,6 +87,7 @@
   justify-content: center;
   overflow: hidden;
 }
+
 
 .thumb-nav-btn {
   background-color: rgba(255, 255, 255, 0.2);
@@ -114,6 +106,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+
 .thumbnails {
   display: flex;
   overflow-x: auto;
@@ -123,15 +116,16 @@
   height: 100px;
   box-sizing: border-box;
   padding-bottom: 0.2rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
   white-space: nowrap;
 }
 
 .thumbnails::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari */
 }
 
+/* Thumbnail từng ảnh nhỏ */
 .thumbnail {
   flex: 0 0 100px;
   height: 70px;
@@ -150,7 +144,7 @@
   border-color: red;
 }
 
-/* Responsive */
+/* ------------------ Responsive ------------------ */
 @media (max-width: 1024px) {
   .hoatdongtrongnuoc-title {
     font-size: 2.5rem;
