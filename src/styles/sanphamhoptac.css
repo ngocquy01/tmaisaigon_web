@@ -12,7 +12,7 @@
   margin-bottom: 1.5rem;
   margin-top: 10px;
   position: relative;
-  top: 20px; /* đẩy xuống 20px */
+  top: 20px;
   z-index: 1;
 }
 
@@ -35,7 +35,15 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Overlay: ẩn ban đầu */
+.image-sanphamhoptac img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Overlay */
 .image-sanphamhoptac .overlay {
   position: absolute;
   top: 0;
@@ -53,7 +61,7 @@
   transition: width 0.6s ease-in-out;
 }
 
-/* Nội dung trong overlay (chữ) */
+/* Nội dung trong overlay */
 .image-sanphamhoptac .overlay span {
   opacity: 0;
   transform: translateY(100%);
@@ -65,25 +73,73 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Khi hover: mở rộng overlay từ phải sang trái */
+/* Hover effect */
 .image-sanphamhoptac:hover .overlay {
   width: 100%;
 }
 
-/* Khi hover: chữ hiện lên từ dưới */
 .image-sanphamhoptac:hover .overlay span {
   transform: translateY(0);
   opacity: 1;
 }
 
 .san-pham-hop-tac::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* hoặc 100% tùy theo mong muốn */
-    height: 0.5px; /* Độ dày của thanh */
-    background-color: #ccc;
-    z-index: 0;
-    bottom: 35px;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.5px;
+  background-color: #ccc;
+  z-index: 0;
+  bottom: 35px;
+}
+
+/* ================= Responsive ================= */
+
+/* Laptop & Tablet */
+@media (max-width: 1024px) {
+  .images-sanphamhoptac {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .san-pham-title {
+    font-size: 2.2rem;
+    top: 10px;
+  }
+
+  .image-sanphamhoptac .overlay span {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .images-sanphamhoptac {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .san-pham-title {
+    font-size: 1.8rem;
+    top: 5px;
+  }
+
+  .image-sanphamhoptac {
+    max-width: 90%;
+  }
+
+  .image-sanphamhoptac .overlay span {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .san-pham-hop-tac {
+    padding: 1rem;
+  }
+
+  .san-pham-hop-tac::after {
+    bottom: 20px;
+  }
 }

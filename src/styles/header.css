@@ -95,3 +95,39 @@ nav.menu a:hover {
   background-color: #f0f0f0;
 }
 
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .logo {
+    top: 12px;
+    right: 16px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .menu-btn {
+    top: 12px;
+    left: 16px;
+    font-size: 26px;
+    padding: 6px 10px;
+  }
+
+  .hero-image img {
+    height: 60vh;
+    border-radius: 0;
+  }
+
+  nav.menu {
+    width: 85%;
+    height: 100vh;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+  }
+
+  nav.menu a {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}

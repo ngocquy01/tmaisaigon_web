@@ -1,66 +1,110 @@
 .chuc-nang {
-    padding: 2rem 2rem;
-    background-color: #fefefe;
-    text-align: center;
-    position: relative; /* Để đặt thanh ngang trên */
-    margin-top: 10px; /* Xịt xuống 1 xíu */
+  padding: 2rem 2rem;
+  background-color: #fefefe;
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
 }
 
 .chuc-nang-title {
-    grid-column: 1 / -1; /* Cho tiêu đề chiếm toàn bộ hàng */
-    color: rgb(4, 77, 81);
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    margin-top: -10px;
-    position: relative;
-    z-index: 1;
+  grid-column: 1 / -1;
+  color: rgb(4, 77, 81);
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  margin-top: -10px;
+  position: relative;
+  z-index: 1;
 }
 
 .images-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Chia thành 5 cột đều trong 1 hàng */
-    gap: 1rem;
-    padding: 2rem 0;
-    justify-items: center;
-    background-color: #fff;
-    position: relative;
-    margin-top: -1.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 2rem 0;
+  justify-items: center;
+  background-color: #fff;
+  position: relative;
+  margin-top: -1.5rem;
 }
 
 .image-item {
-    width: 100%;
-    max-width: 180px; /* Phóng to chiều ngang ảnh */
-    height: 140px; /* Phóng to chiều cao ảnh */
-    object-fit: contain;
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 6px;
+  width: 100%;
+  max-width: 180px;
+  height: 140px;
+  object-fit: contain;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
 .icon {
-    display: block;
-    margin: 0 auto 0.5rem auto;
-    width: 50px;
-    height: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  width: 50px;
+  height: auto;
 }
 
-/* Thanh ngang trên và dưới */
-.chuc-nang::before, .chuc-nang::after {
-    content: "";
-    position: absolute;
-    left: 50%; /* Đặt thanh ngang vào giữa */
-    transform: translateX(-50%); /* Căn giữa thanh ngang */
-    width: 100%; /* Thanh ngang dài 90% chiều rộng trang */
-    height: 0.5px; /* Chiều cao thanh ngang */    
-    background-color: #ccc; /* Màu của thanh ngang */
-    z-index: 0;
+.chuc-nang::before,
+.chuc-nang::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0.5px;
+  background-color: #ccc;
+  z-index: 0;
 }
 
 .chuc-nang::before {
-    top: 0; /* Thanh ngang trên */
+  top: 0;
 }
 
 .chuc-nang::after {
-    bottom: 0; /* Thanh ngang dưới */
-    top: auto;
+  bottom: 0;
+  top: auto;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 1024px) {
+  .images-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .chuc-nang-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .images-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    padding: 1.5rem 0;
+  }
+
+  .image-item {
+    max-width: 130px;
+    height: 100px;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .images-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    padding: 1.2rem 0;
+  }
+
+  .chuc-nang-title {
+    font-size: 1.8rem;
+  }
+
+  .image-item {
+    max-width: 120px;
+    height: 90px;
+    padding: 0.3rem;
+  }
 }

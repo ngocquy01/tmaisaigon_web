@@ -24,6 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .main-image-frame {
@@ -42,6 +43,7 @@
   object-fit: contain;
 }
 
+/* Nút điều hướng ảnh lớn */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -70,7 +72,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Thanh thumbnails wrapper mở rộng hết chiều ngang */
+/* Wrapper chứa thanh thumbnails */
 .thumbnails-wrapper {
   width: 100%;
   display: flex;
@@ -82,9 +84,10 @@
   margin: 1rem auto 0 auto;
   position: relative;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* Nút điều khiển thumbnails */
+/* Nút điều hướng thumbnails trái/phải */
 .thumb-nav-btn {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
@@ -102,7 +105,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Thanh thumbnails dạng carousel hiển thị nhiều ảnh hơn, không có thanh cuộn */
+/* Dải thumbnails (carousel ngang) */
 .thumbnails {
   display: flex;
   overflow-x: auto;
@@ -112,16 +115,15 @@
   height: 100px;
   box-sizing: border-box;
   padding-bottom: 0.2rem;
-
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
+  white-space: nowrap;
 }
-
 .thumbnails::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge mới */
+  display: none; /* Chrome, Safari */
 }
 
-/* Thumbnail ảnh */
+/* Thumbnail từng ảnh nhỏ */
 .thumbnail {
   flex: 0 0 100px;
   height: 70px;
@@ -138,4 +140,68 @@
 .thumbnail.active {
   opacity: 1;
   border-color: red;
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 1024px) {
+  .hoatdongtrongnuoc-title {
+    font-size: 2.5rem;
+  }
+
+  .main-image-frame {
+    height: 500px;
+  }
+
+  .thumbnail {
+    flex: 0 0 90px;
+    height: 65px;
+  }
+
+  .nav-btn,
+  .thumb-nav-btn {
+    font-size: 1.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hoatdongtrongnuoc-title {
+    font-size: 2.2rem;
+  }
+
+  .main-image-frame {
+    height: 400px;
+  }
+
+  .thumbnail {
+    flex: 0 0 80px;
+    height: 60px;
+  }
+
+  .nav-btn,
+  .thumb-nav-btn {
+    font-size: 1.6rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hoatdongtrongnuoc-title {
+    font-size: 1.8rem;
+  }
+
+  .main-image-frame {
+    height: 280px;
+  }
+
+  .thumbnail {
+    flex: 0 0 70px;
+    height: 50px;
+  }
+
+  .nav-btn,
+  .thumb-nav-btn {
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+  }
 }

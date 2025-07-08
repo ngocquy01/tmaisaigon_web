@@ -1,59 +1,145 @@
 .gioithieu {
-    padding: 2rem 2rem;
-    margin-top: -2.2rem; 
-    background-color: #fefefe;
-    text-align: center;
-  }
-  
+  padding: 2rem;
+  margin-top: -2.2rem; 
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.gioi-thieu-title {
+  color: rgb(4, 77, 81);
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+.gioi-thieu-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* Cho mobile */
+}
+
+.left-column,
+.right-column {
+  flex: 1 1 45%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center; 
+  transition: transform 0.3s ease;
+}
+
+.left-column:hover,
+.right-column:hover {
+  transform: translateY(-4px);
+}
+
+.left-column h2, .right-column h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.left-column p {
+  color: red; 
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.right-column p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.left-column .icon {
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  width: 40px;
+  height: auto;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  width: 50px;
+  height: auto;
+}
+
+/* Mượt khi cuộn */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------- Responsive ---------------------- */
+@media (max-width: 1024px) {
   .gioi-thieu-title {
-    color: rgb(4, 77, 81);
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
+    font-size: 2.4rem;
   }
-  
+
+  .left-column p {
+    font-size: 1.8rem;
+  }
+
+  .right-column p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
   .gioi-thieu-columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap; /* Cho mobile */
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .left-column,
   .right-column {
-    flex: 1 1 45%;
-    background-color: #fff;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center; 
+    width: 100%;
+    max-width: 500px;
   }
-  
-  .left-column h2, .right-column h2 {
-    color: #333;
-    font-size: 2rem;
+
+  .gioi-thieu-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
-  
+
+  .left-column h2,
+  .right-column h2 {
+    font-size: 1.8rem;
+  }
+
   .left-column p {
-    color: red; 
-    font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
+
   .right-column p {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
-  .left-column .icon {
-    display: block;
-    margin: 0 auto 0.5rem auto; /* Căn giữa và cách dưới */
-    width: 40px;
-    height: auto;
+}
+
+@media (max-width: 480px) {
+  .gioithieu {
+    padding: 1.5rem 1rem;
   }
+
+  .gioi-thieu-title {
+    font-size: 1.9rem;
+  }
+
+  .left-column h2,
+  .right-column h2 {
+    font-size: 1.6rem;
+  }
+
+  .left-column p {
+    font-size: 1.4rem;
+  }
+
+  .right-column p {
+    font-size: 1rem;
+  }
+
   .icon {
-    display: block;
-    margin: 0 auto 0.5rem auto;
-    width: 50px;
-    height: auto;
+    width: 36px;
   }
-  html {
-  scroll-behavior: smooth;
 }
