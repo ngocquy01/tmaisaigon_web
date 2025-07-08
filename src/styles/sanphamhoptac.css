@@ -6,13 +6,12 @@
   margin-top: -30px;
 }
 
-.san-pham-title {
+.san-pham-hop-tac .san-pham-title {
   color: rgb(4, 77, 81);
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
-  margin-top: 40px;
+  margin-top: -10px; 
   position: relative;
-  top: 20px;
   z-index: 1;
 }
 
@@ -103,9 +102,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .san-pham-title {
+  .san-pham-hop-tac .san-pham-title {
     font-size: 2.2rem;
-    top: 10px;
   }
 
   .image-sanphamhoptac .overlay span {
@@ -121,9 +119,8 @@
     gap: 1rem;
   }
 
-  .san-pham-title {
+  .san-pham-hop-tac .san-pham-title {
     font-size: 1.8rem;
-    top: 5px;
   }
 
   .image-sanphamhoptac {
