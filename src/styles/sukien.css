@@ -110,10 +110,7 @@
   .gioi-thieu {
     padding: 1.5rem 1rem;
   }
-
   .gioi-thieu::after {
-    bottom: 15px; 
     height: 1px;
-    background-color: #ccc;
   }
 }
