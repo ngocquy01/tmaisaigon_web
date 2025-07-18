@@ -78,17 +78,21 @@
   transform: translateY(0);
   opacity: 1;
 }
+
+/* Thanh ngang dưới cùng */
 .san-pham-hop-tac::after {
   content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 0.5px;
+  height: 1px;
   background-color: #ccc;
+  display: block;
   z-index: 0;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
   .images-sanphamhoptac {
     grid-template-columns: repeat(2, 1fr);
@@ -125,11 +129,11 @@
   }
 
   .san-pham-hop-tac {
-    padding: 2rem 1rem 2rem; 
+    padding: 2rem 1rem 2rem;
   }
 
   .san-pham-hop-tac::after {
-    height: 0.5px;
-    margin-top: 1.5rem;
+    bottom: 0;
+    height: 1px;
   }
 }
