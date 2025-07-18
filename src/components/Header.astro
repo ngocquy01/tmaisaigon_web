@@ -1,5 +1,4 @@
 ---
-// Phần server-side script nếu cần (ví dụ import logo URL, etc)
 const logoUrl = "/img/logo_tmaisaigon.jpg";
 const heroImages = [
   "/img/general/trangchu.jpg",
@@ -13,14 +12,22 @@ const heroImages = [
   "/img/general/ngaymoisaigon_TMAI_SAIGON_ky_niem_3_nam.jpg",
   "/img/general/12.jpg"
 ];
+import "../styles/header.css";
 ---
+
 <header>
   <div class="logo">
-    <img src={logoUrl} alt="TMAi Saigon Logo" width="150" />
+    <img src={logoUrl} alt="TMAI Saigon Logo" width="150" />
   </div>
 
   <div class="hero-image">
-    <img src={heroImages[0]} alt="Hero Image" id="hero-image" />
+    {heroImages.map((img, index) => (
+      <img
+        src={img}
+        alt={`Hero Image ${index + 1}`}
+        class={index === 0 ? "active" : ""}
+      />
+    ))}
   </div>
 
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
@@ -42,28 +49,22 @@ const heroImages = [
 </header>
 
 <script client:load>
-  const heroImages = [
-    "/img/general/trangchu.jpg",
-    "/img/general/344X3085@2x.jpg",
-    "/img/general/344X3090@2x.jpg",
-    "/img/general/344X3127@2x.jpg",
-    "/img/general/hinh_trang_chu_2.jpg",
-    "/img/general/IMG_0894@2x.jpg",
-    "/img/general/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_1@2x.jpg",
-    "/img/general/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_8@2x.jpg",
-    "/img/general/ngaymoisaigon_TMAI_SAIGON_ky_niem_3_nam.jpg",
-    "/img/general/12.jpg"
-  ];
-
-  let currentImageIndex = 0;
+  const images = document.querySelectorAll('.hero-image img');
+  let current = 0;
 
   setInterval(() => {
-    currentImageIndex = (currentImageIndex + 1) % heroImages.length;
-    const img = document.getElementById('hero-image');
-    if (img) {
-      img.src = heroImages[currentImageIndex];
-    }
-  }, 4000);
+    const prev = current;
+    current = (current + 1) % images.length;
+
+    images[prev].classList.remove('active');
+    images[prev].classList.add('previous');
+
+    images[current].classList.add('active');
+
+    setTimeout(() => {
+      images[prev].classList.remove('previous');
+    }, 1500);
+  }, 5000);
 
   const menuBtn = document.getElementById('menuBtn');
   const menu = document.getElementById('menu');
@@ -88,5 +89,4 @@ const heroImages = [
   });
 
   closeBtn.addEventListener('click', closeMenu);
-
 </script>
