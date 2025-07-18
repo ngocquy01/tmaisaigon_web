@@ -120,7 +120,7 @@ nav.menu a:hover {
 
   /* Menu trên mobile */
   nav.menu {
-    width: 85%; 
+    width: 60%; 
     max-width: 280px; 
     height: 100vh;
     top: 0;
