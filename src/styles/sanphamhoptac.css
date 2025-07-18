@@ -78,7 +78,6 @@
   transform: translateY(0);
   opacity: 1;
 }
-
 .san-pham-hop-tac::after {
   content: "";
   position: absolute;
@@ -88,12 +87,8 @@
   height: 0.5px;
   background-color: #ccc;
   z-index: 0;
-  bottom: 30px;
 }
 
-/* ================= Responsive ================= */
-
-/* Laptop & Tablet */
 @media (max-width: 1024px) {
   .images-sanphamhoptac {
     grid-template-columns: repeat(2, 1fr);
@@ -130,11 +125,11 @@
   }
 
   .san-pham-hop-tac {
-    padding: 2rem 1rem 3rem;
+    padding: 2rem 1rem 2rem; 
   }
 
   .san-pham-hop-tac::after {
-    bottom: 10px; 
-    height: 1px;
+    height: 0.5px;
+    margin-top: 1.5rem;
   }
 }
