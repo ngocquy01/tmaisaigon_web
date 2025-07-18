@@ -1,16 +1,17 @@
 .san-pham-websites {
-  padding: 3rem;
+  padding: 2rem;
+  padding-bottom: 2.5rem; 
   background-color: #fefefe;
   text-align: center;
   position: relative;
-  margin-top: -30px;
+  margin-top: -30px; 
 }
 
 .san-pham-title {
   color: rgb(4, 77, 81);
   font-size: 3rem;
   margin-bottom: 2rem;
-  margin-top: -30px;
+  margin-top: -20px;
   position: relative;
   z-index: 1;
 }
@@ -22,7 +23,7 @@
   padding: 3rem 0;
   justify-items: center;
   background-color: #fff;
-  margin-top: -2.5rem;
+  margin-top: -2rem;
 }
 
 .image-sanphamwebsites {
@@ -83,8 +84,6 @@
   bottom: 35px;
 }
 
-/* ========== Responsive ========== */
-
 /* Tablet */
 @media (max-width: 1024px) {
   .images-sanphamwebsites {
@@ -129,10 +128,10 @@
   }
 
   .san-pham-websites {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem 3rem 1rem; 
   }
 
   .san-pham-websites::after {
-    bottom: 20px;
+    height: 1px;
   }
 }
