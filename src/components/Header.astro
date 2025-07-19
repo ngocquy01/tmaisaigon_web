@@ -12,6 +12,19 @@ const heroImages = [
   "/img/general/ngaymoisaigon_TMAI_SAIGON_ky_niem_3_nam.jpg",
   "/img/general/12.jpg"
 ];
+
+const navLinks = [
+  { href: "#gioithieu", label: "Giới thiệu" },
+  { href: "#chuc-nang", label: "Chức năng" },
+  { href: "#nhan-su", label: "Nhân sự" },
+  { href: "#san-pham-dau-tu", label: "Sản phẩm đầu tư" },
+  { href: "#san-pham-hop-tac", label: "Sản phẩm hợp tác - Dự Án sách" },
+  { href: "#ket-noi-kinh-doanh", label: "Kết nối kinh doanh" },
+  { href: "#san-pham-websites", label: "Sản phẩm websites" },
+  { href: "#hoat-dong-trong-nuoc", label: "Hoạt động" },
+  { href: "#lien-he", label: "Liên hệ" }
+];
+
 import "../styles/header.css";
 ---
 
@@ -36,15 +49,9 @@ import "../styles/header.css";
 
   <nav class="menu" id="menu" role="menu" aria-hidden="true">
     <a href="javascript:void(0);" class="close-text" role="menuitem" tabindex="-1">Close ✕</a>
-    <a href="#gioithieu" role="menuitem" tabindex="-1">Giới thiệu</a>
-    <a href="#chuc-nang" role="menuitem" tabindex="-1">Chức năng</a>
-    <a href="#nhan-su" role="menuitem" tabindex="-1">Nhân sự</a>
-    <a href="#san-pham-dau-tu" role="menuitem" tabindex="-1">Sản phẩm đầu tư</a>
-    <a href="#san-pham-hop-tac" role="menuitem" tabindex="-1">Sản phẩm hợp tác - Dự Án sách</a>
-    <a href="#ket-noi-kinh-doanh" role="menuitem" tabindex="-1">Kết nối kinh doanh</a>
-    <a href="#san-pham-websites" role="menuitem" tabindex="-1">Sản phẩm websites</a>
-    <a href="#hoat-dong-trong-nuoc" role="menuitem" tabindex="-1">Hoạt động</a>
-    <a href="#lien-he" role="menuitem" tabindex="-1">Liên hệ</a>
+    {navLinks.map((item) => (
+      <a href={item.href} role="menuitem" tabindex="-1">{item.label}</a>
+    ))}
   </nav>
 </header>
 
