@@ -1,24 +1,31 @@
 ---
 import '../styles/chucnang.css';
+
+const partners = [
+  { src: "/img/logo/baemin.png", alt: "Baemin" },
+  { src: "/img/logo/bigbowl.png", alt: "Big Bowl" },
+  { src: "/img/logo/CFC gif.gif", alt: "CFC" },
+  { src: "/img/logo/cuong_phat.png", alt: "Cường Phát" },
+  { src: "/img/logo/eurohome.png", alt: "Eurohome" },
+  { src: "/img/logo/ford.png", alt: "Ford" },
+  { src: "/img/logo/ic-ambassador.png", alt: "Ambassador" },
+  { src: "/img/logo/JWMARRIOTT.png", alt: "JW Marriott" },
+  { src: "/img/logo/ksmaihouse.jpg", alt: "Mai House" },
+  { src: "/img/logo/linhchi.png", alt: "Linh Chi" },
+  { src: "/img/logo/logo-ar-group-jsc.png", alt: "AR Group" },
+  { src: "/img/logo/logo-vtpv-min.png", alt: "VTPV" },
+  { src: "/img/logo/new_world.png", alt: "New World" },
+  { src: "/img/logo/minh_long.png", alt: "Minh Long" },
+  { src: "/img/logo/LOGO-LPD.jpg", alt: "LPD" },
+  { src: "/img/logo/logo-EC-HL.png", alt: "EC-HL" }
+];
 ---
+
 <section id="chuc-nang" class="chuc-nang">
   <div class="images-container">
-  <h2 class="chuc-nang-title">Hợp Tác</h2>
-      <img src="/img/logo/baemin.png" alt="Baemin" class="image-item" />
-      <img src="/img/logo/bigbowl.png" alt="Big Bowl" class="image-item" />
-      <img src="/img/logo/CFC gif.gif" alt="CFC" class="image-item" />
-      <img src="/img/logo/cuong_phat.png" alt="Cường Phát" class="image-item" />
-      <img src="/img/logo/eurohome.png" alt="Eurohome" class="image-item" />
-      <img src="/img/logo/ford.png" alt="Ford" class="image-item" />
-      <img src="/img/logo/ic-ambassador.png" alt="Ambassador" class="image-item" />
-      <img src="/img/logo/JWMARRIOTT.png" alt="JW Marriott" class="image-item" />
-      <img src="/img/logo/ksmaihouse.jpg" alt="Mai House" class="image-item" />
-      <img src="/img/logo/linhchi.png" alt="Linh Chi" class="image-item" />
-      <img src="/img/logo/logo-ar-group-jsc.png" alt="AR Group" class="image-item" />
-      <img src="/img/logo/logo-vtpv-min.png" alt="VTPV" class="image-item" />
-      <img src="/img/logo/new_world.png" alt="New World" class="image-item" />
-      <img src="/img/logo/minh_long.png" alt="Minh Long" class="image-item" />
-      <img src="/img/logo/LOGO-LPD.jpg" alt="LPD" class="image-item" />
-      <img src="/img/logo/logo-EC-HL.png" alt="EC-HL" class="image-item" />
-    </div>
+    <h2 class="chuc-nang-title">Hợp Tác</h2>
+    {partners.map((partner) => (
+      <img src={partner.src} alt={partner.alt} class="image-item" />
+    ))}
+  </div>
 </section>
