@@ -1,26 +1,40 @@
-
 ---
 import '../styles/sanphamhoptac.css';
+
+const products = [
+  {
+    img: "/img/products/BNI.png",
+    alt: "bni",
+    description: "Sách Kỷ yếu BNI: Phối hợp với Tổ chức Kết nối kinh doanh toàn cầu tại Việt Nam có hơn 1,700 thành viên trên cả nước"
+  },
+  {
+    img: "/img/products/nhip_song.png",
+    alt: "nhipsong",
+    description: "Nhịp sống (Life of Pouchen Group in Vietnam): Ấn phẩm nội bộ của Tập đoàn Pou Chen (Đài Loan) tại Việt Nam, phục vụ hơn 140,000 cán bộ- nhân viên trên cả nước"
+  },
+  {
+    img: "/img/products/vietnhat.png",
+    alt: "VietNhat",
+    description: "Sách Doanh nghiệp Việt- Nhật, dự kiến phát hành mỗi năm/số, nhằm vinh danh những đóng góp của doanh nghiệp 2 nước cho sự phát triển kinh tế của Việt Nam và tình hữu nghị giữa 2 nước."
+  },
+  {
+    img: "/img/products/Masterspice.png",
+    alt: "Mastersprice",
+    description: "Sách The Master of Spice: Dự kiến phát hành mỗi năm/số, nhằm giới thiệu ẩm thực truyền thống- hiện đại của các nước, nhà hàng, ẩm thực xanh và vai trò của đầu bếp – một trong những đại sứ về du lịch."
+  }
+];
 ---
 
 <section id="san-pham-hop-tac" class="san-pham-hop-tac">
   <h2 class="san-pham-title">Sản Phẩm Hợp Tác - Dự Án Sách</h2>
   <div class="images-sanphamhoptac">
-    <div class="image-sanphamhoptac">
-      <img src="/img/products/BNI.png" alt="bni" />
-      <div class="overlay"><span>Sách Kỷ yếu BNI: Phối hợp với Tổ chức Kết nối kinh doanh toàn cầu tại Việt Nam có hơn 1,700 thành viên trên cả nước</span></div>
-    </div>
-    <div class="image-sanphamhoptac">
-      <img src="/img/products/nhip_song.png" alt="nhipsong" />
-      <div class="overlay"><span>Nhịp sống (Life of Pouchen Group in Vietnam): Ấn phẩm nội bộ của Tập đoàn Pou Chen (Đài Loan) tại Việt Nam, phục vụ hơn 140,000 cán bộ- nhân viên trên cả nước</span></div>
-    </div>
-    <div class="image-sanphamhoptac">
-      <img src="/img/products/vietnhat.png" alt="VietNhat" />
-      <div class="overlay"><span>Sách Doanh nghiệp Việt- Nhật, dự kiến phát hành mỗi năm/số, nhằm vinh danh những đóng góp của doanh nghiệp 2 nước cho sự phát triển kinh tế của Việt Nam và tình hữu nghị giữa 2 nước.</span></div>
-    </div>
-    <div class="image-sanphamhoptac">
-      <img src="/img/products/Masterspice.png" alt="Mastersprice" />
-      <div class="overlay"><span>Sách The Master of Spice: Dự kiến phát hành mỗi năm/số, nhằm giới thiệu ẩm thực truyền thống- hiện đại của các nước, nhà hàng, ẩm thực xanh và vai trò của đầu bếp – một trong những đại sứ về du lịch.</span></div>
-    </div>
+    {products.map((product, index) => (
+      <div class="image-sanphamhoptac" key={index}>
+        <img src={product.img} alt={product.alt} />
+        <div class="overlay">
+          <span>{product.description}</span>
+        </div>
+      </div>
+    ))}
   </div>
 </section>
