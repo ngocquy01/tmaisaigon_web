@@ -1,111 +1,80 @@
 ---
 import '../styles/ketnoi.css';
+
+const events = [
+  {
+    link: "http://ngaymoisaigon.com/116-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-cung-Ngay-m%E1%BB%9Bi-Saigon",
+    img: "/img/products/KNKD ngay moi saigon.jpg",
+    alt: "Kết Nối Kinh Doanh Cùng Ngày Mới Saigon",
+    caption: "Kết Nối Kinh Doanh Cùng Ngày Mới Saigon (26/8/2015)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/117-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Nong-nghi%E1%BB%87p-xanh",
+    img: "/img/products/KNKD 7.9.jpg",
+    alt: "Kết Nối Kinh Doanh - Nông Nghiệp Xanh",
+    caption: "Kết Nối Kinh Doanh - Nông Nghiệp Xanh (7/9/2015)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/258-K%E1%BA%BET-N%E1%BB%90I-KINH-DOANH-%E1%BA%A8m-th%E1%BB%B1c-v%E1%BB%9Bi-cu%E1%BB%99c-s%E1%BB%91ng",
+    img: "/img/products/KNKD 12.12.jpg",
+    alt: "Kết Nối Kinh Doanh - Ẩm Thực Với Cuộc Sống",
+    caption: "Kết Nối Kinh Doanh - Ẩm Thực Với Cuộc Sống (12/12/2015)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/304-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Chia-s%E1%BA%BB-trong-thong-di%E1%BB%87p-qu%E1%BA%A3ng-cao",
+    img: "/img/products/chia se trogn thong diep quang cao.jpg",
+    alt: "Kết Nối Kinh Doanh - Chia Sẻ Trong Thông Điệp Quảng Cáo",
+    caption: 'Kết Nối Kinh Doanh - "Chia Sẻ Trong Thông Điệp Quảng Cáo" (28/12/2015)'
+  },
+  {
+    link: "http://ngaymoisaigon.com/589-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Doanh-Nghi%E1%BB%87p-V%E1%BB%9Bi-C%E1%BB%99ng-D%E1%BB%93ng",
+    img: "/img/products/dn voi cong  dong.jpg",
+    alt: "Kết Nối Kinh Doanh - Doanh Nghiệp Với Cộng Đồng",
+    caption: "Kết Nối Kinh Doanh - Doanh Nghiệp Với Cộng Đồng (26/4/2016)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/694-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-H%E1%BB%A3p-Tac-Cung-Phat-Tri%E1%BB%83n",
+    img: "/img/products/hop tac cugn phat trien.jpg",
+    alt: "Kết Nối Kinh Doanh - Hợp Tác Cùng Phát Triển",
+    caption: "Kết Nối Kinh Doanh - Hợp Tác cùng Phát Triển (14/06/2016)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/876-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Gi%E1%BA%A3i-Quy%E1%BA%BFt-Tranh-Ch%E1%BA%A5p-Thuong-M%E1%BA%A1i",
+    img: "/img/products/gaii quyet tranh chap trogn thuong mai.jpg",
+    alt: "Kết Nối Kinh Doanh - Giải Quyết Tranh Chấp Thương Mại",
+    caption: "Kết Nối Kinh Doanh - Giải Quyết Tranh Chấp Thương Mại (29/09/2016)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/924-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Cu%E1%BB%99c-S%E1%BB%91ng-Xanh",
+    img: "/img/products/cuoc song xanh (2).jpg",
+    alt: "Kết Nối Kinh Doanh - Cuộc Sống Xanh",
+    caption: "Kết Nối Kinh Doanh - Cuộc Sống Xanh (22/10/2016)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/1145-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Ph%E1%BB%A5-N%E1%BB%AF-Khat-V%E1%BB%8Dng",
+    img: "/img/products/KNKD 8.3.jpg",
+    alt: "Kết Nối Kinh Doanh - Phụ Nữ & Khát Vọng",
+    caption: "Kết Nối Kinh Doanh - Phụ Nữ & Khát Vọng (8/3/2017)"
+  },
+  {
+    link: "http://ngaymoisaigon.com/1346-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Doanh-nhan-va-S%E1%BB%A9c-kh%E1%BB%8Fe",
+    img: "/img/products/KNKD - DN VA SUC KHOE.jpg",
+    alt: "Kết Nối Kinh Doanh - Doanh Nhân Và Sức Khỏe",
+    caption: "Kết Nối Kinh Doanh - Doanh Nhân Và Sức Khỏe (18/07/2017)"
+  },
+];
 ---
 
 <section id="ket-noi-kinh-doanh" class="ket-noi-kinh-doanh">
   <h2 class="ket-noi-title">Tổ Chức Sự Kiện Kết Nối Kinh Doanh</h2>
   <div class="images-ketnoikinhdoanh">
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/116-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-cung-Ngay-m%E1%BB%9Bi-Saigon" target="_blank">
-        <img src="/img/products/KNKD ngay moi saigon.jpg" alt="Kết Nối Kinh Doanh Cùng Ngày Mới Saigon" />
-        <p class="caption">Kết Nối Kinh Doanh Cùng Ngày Mới Saigon (26/8/2015)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/117-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Nong-nghi%E1%BB%87p-xanh" target="_blank">
-        <img src="/img/products/KNKD 7.9.jpg" alt="Kết Nối Kinh Doanh - Nông Nghiệp Xanh" />
-        <p class="caption">Kết Nối Kinh Doanh - Nông Nghiệp Xanh (7/9/2015)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/258-K%E1%BA%BET-N%E1%BB%90I-KINH-DOANH-%E1%BA%A8m-th%E1%BB%B1c-v%E1%BB%9Bi-cu%E1%BB%99c-s%E1%BB%91ng" target="_blank">
-        <img src="/img/products/KNKD 12.12.jpg" alt="Kết Nối Kinh Doanh - Ẩm Thực Với Cuộc Sống" />
-        <p class="caption">KẾT NỐI KINH DOANH - Ẩm Thực Với Cuộc Sống (12/12/2015)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/304-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Chia-s%E1%BA%BB-trong-thong-di%E1%BB%87p-qu%E1%BA%A3ng-cao" target="_blank">
-        <img src="/img/products/chia se trogn thong diep quang cao.jpg" alt="Kết Nối Kinh Doanh - Chia Sẻ Trong Thông Điệp Quảng Cáo" />
-        <p class="caption">Kết Nối Kinh Doanh - "Chia Sẻ Trong Thông Điệp Quảng Cáo" (28/12/2015)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/589-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Doanh-Nghi%E1%BB%87p-V%E1%BB%9Bi-C%E1%BB%99ng-D%E1%BB%93ng" target="_blank">
-        <img src="/img/products/dn voi cong  dong.jpg" alt="Kết Nối Kinh Doanh - Doanh Nghiệp Với Cộng Đồng" />
-        <p class="caption">Kết Nối Kinh Doanh - Doanh Nghiệp Với Cộng Đồng (26/4/2016)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/694-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-H%E1%BB%A3p-Tac-Cung-Phat-Tri%E1%BB%83n" target="_blank">
-        <img src="/img/products/hop tac cugn phat trien.jpg" alt="Kết Nối Kinh Doanh - Hợp Tác Cùng Phát Triển" />
-        <p class="caption">Kết Nối Kinh Doanh - Hợp Tác cùng Phát Triển (14/06/2016)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/876-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Gi%E1%BA%A3i-Quy%E1%BA%BFt-Tranh-Ch%E1%BA%A5p-Thuong-M%E1%BA%A1i" target="_blank">
-        <img src="/img/products/gaii quyet tranh chap trogn thuong mai.jpg" alt="Kết Nối Kinh Doanh - Giải Quyết Tranh Chấp Thương Mại" />
-        <p class="caption">Kết Nối Kinh Doanh - Giải Quyết Tranh Chấp Thương Mại (29/09/2016)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/924-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Cu%E1%BB%99c-S%E1%BB%91ng-Xanh" target="_blank">
-        <img src="/img/products/cuoc song xanh (2).jpg" alt="Kết Nối Kinh Doanh - Cuộc Sống Xanh" />
-        <p class="caption">Kết Nối Kinh Doanh - Cuộc Sống Xanh (22/10/2016)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1145-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Ph%E1%BB%A5-N%E1%BB%AF-Khat-V%E1%BB%8Dng" target="_blank">
-        <img src="/img/products/KNKD 8.3.jpg" alt="Kết Nối Kinh Doanh - Phụ Nữ & Khát Vọng" />
-        <p class="caption">Kết Nối Kinh Doanh - Phụ Nữ & Khát Vọng (8/3/2017)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1346-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Doanh-nhan-va-S%E1%BB%A9c-kh%E1%BB%8Fe" target="_blank">
-        <img src="/img/products/KNKD - DN VA SUC KHOE.jpg" alt="Kết Nối Kinh Doanh - Doanh Nhân Và Sức Khỏe" />
-        <p class="caption">Kết Nối Kinh Doanh - Doanh Nhân Và Sức Khỏe (18/07/2017)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1423-K%E1%BA%BFt-N%E1%BB%91i-Kinh-Doanh-Homestay" target="_blank">
-        <img src="/img/products/KNKD HOMESTAY.jpg" alt="Kết Nối Kinh Doanh - Homestay" />
-        <p class="caption">Kết Nối Kinh Doanh - Homestay (21/09/2017)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1494-K%E1%BA%BFt-n%E1%BB%91i-kinh-doanh-Chia-s%E1%BA%BB-kinh-nghi%E1%BB%87m-thanh-cong-trong-kinh-doanh" target="_blank">
-        <img src="/img/products/chia se kinh nghiem thanh cong.jpg" alt="Ấn Phẩm Ngày Mới Saigon Kỷ Niệm 3 Năm" />
-        <p class="caption">Ấn Phẩm Ngày Mới Saigon Kỷ Niệm 3 Năm Thành Lập (12/11/2017)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1540-%E1%BA%A4n-ph%E1%BA%A9m-Ngay-M%E1%BB%9Bi-Saigon-k%E1%BB%B7-ni%E1%BB%87m-3-nam-thanh-l%E1%BA%ADp" target="_blank">
-        <img src="/img/products/ngaymoisaigon_le_ky_niem_3_nam_TMAI_SAIGON_7@2x.jpg" alt="Kết Nối Kinh Doanh - Xây Dựng Thương Hiệu Thời Hội Nhập" />
-        <p class="caption">KẾT NỐI KINH DOANH- Xây Dựng Thương Hiệu Thời Hội Nhập (11/12/2017)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1581-K%E1%BA%BET-N%E1%BB%90I-KINH-DOANH-Xay-d%E1%BB%B1ng-thuong-hi%E1%BB%87u-th%E1%BB%9Di-h%E1%BB%99i-nh%E1%BA%ADp" target="_blank">
-        <img src="/img/products/xay dung thuong hieu thoi hoi nhap.jpg" alt="Kết Nối Kinh Doanh - Tự Tin Tỏa Sáng, Đại Sứ Thương Hiệu" />
-        <p class="caption">KẾT NỐI KINH DOANH - Tự Tin Tỏa Sáng, Đại Sứ Thương Hiệu (15/03/2018)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/1720-K%E1%BA%BET-N%E1%BB%90I-KINH-DOANH-T%E1%BB%B1-Tin-T%E1%BB%8Fa-Sang-D%E1%BA%A1i-s%E1%BB%A9-Thuong-hi%E1%BB%87u" target="_blank">
-        <img src="/img/products/12.jpg" alt="Kết Nối Kinh Doanh - Tự Tin Tỏa Sáng, Đại Sứ Thương Hiệu (Bản khác)" />
-        <p class="caption">KẾT NỐI KINH DOANH - Tự Tin Tỏa Sáng, Đại Sứ Thương Hiệu (15/03/2018)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/5518-K%E1%BA%BET-N%E1%BB%90I-KINH-DOANH-B%E1%BA%A3o-V%E1%BB%87-S%E1%BB%A9c-Kh%E1%BB%8Fe" target="_blank">
-        <img src="/img/products/ket_noi_kinh_doanh_Bao_ve_suc_khoe_21_2_2020.jpg" alt="Kết Nối Kinh Doanh - Bảo Vệ Sức Khỏe" />
-        <p class="caption">KẾT NỐI KINH DOANH- Bảo Vệ Sức Khỏe (21/02/2020)</p>
-      </a>
-    </div>
-    <div class="image-ketnoikinhdoanh">
-      <a href="http://ngaymoisaigon.com/5930-K%E1%BA%BET-N%E1%BB%90I-KINH-DOANH-Doanh-nghi%E1%BB%87p-va-truy%E1%BB%81n-thong" target="_blank">
-        <img src="/img/products/thumbnail (24).jpg" alt="Kết Nối Kinh Doanh - Doanh Nghiệp Và Truyền Thông" />
-        <p class="caption">KẾT NỐI KINH DOANH- Doanh Nghiệp Và Truyền Thông (19/06/2020)</p>
-      </a>
-    </div>
+    {events.map((event) => (
+      <div class="image-ketnoikinhdoanh">
+        <a href={event.link} target="_blank">
+          <img src={event.img} alt={event.alt} />
+          <p class="caption">{event.caption}</p>
+        </a>
+      </div>
+    ))}
   </div>
 </section>
